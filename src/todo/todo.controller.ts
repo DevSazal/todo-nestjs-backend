@@ -18,16 +18,16 @@ export class TodoController {
 
   @Get(':id')
   getTodo(@Param('id') id: string) {
-    return this.todoService.read(+id);
+    return this.todoService.read(id);
   }
 
   @Patch(':id')
   patchTodo(@Param('id') id: string, @Body() dto: PartialTodoDTO) {
-    return this.todoService.update(+id, dto);
+    return this.todoService.update(id, dto);
   }
 
   @Delete(':id')
   deleteTodo(@Param('id') id: string) {
-    return this.todoService.delete(+id);
+    return this.todoService.delete(id);
   }
 }

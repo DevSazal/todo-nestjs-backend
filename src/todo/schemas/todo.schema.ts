@@ -6,7 +6,7 @@ export class Todo {
   @Prop()
   title: string;
 
-  @Prop()
+  @Prop({ default: false })
   completed: boolean;
 }
 
