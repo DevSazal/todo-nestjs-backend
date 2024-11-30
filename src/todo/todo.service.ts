@@ -7,11 +7,11 @@ export class TodoService {
     return 'This action adds a new todo';
   }
 
-  findAll() {
+  readBatch() {
     return `This action returns all todo`;
   }
 
-  findOne(id: number) {
+  read(id: number) {
     return `This action returns a #${id} todo`;
   }
 
@@ -19,7 +19,7 @@ export class TodoService {
     return `This action updates a #${id} todo`;
   }
 
-  remove(id: number) {
+  delete(id: number) {
     return `This action removes a #${id} todo`;
   }
 }

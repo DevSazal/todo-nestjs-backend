@@ -7,27 +7,27 @@ export class TodoController {
   constructor(private readonly todoService: TodoService) {}
 
   @Post()
-  create(@Body() dto: TodoDTO) {
+  postTodo(@Body() dto: TodoDTO) {
     return this.todoService.create(dto);
   }
 
   @Get()
-  findAll() {
-    return this.todoService.findAll();
+  getTodos() {
+    return this.todoService.readBatch();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.todoService.findOne(+id);
+  getTodo(@Param('id') id: string) {
+    return this.todoService.read(+id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() dto: PartialTodoDTO) {
+  patchTodo(@Param('id') id: string, @Body() dto: PartialTodoDTO) {
     return this.todoService.update(+id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.todoService.remove(+id);
+  deleteTodo(@Param('id') id: string) {
+    return this.todoService.delete(+id);
   }
 }
