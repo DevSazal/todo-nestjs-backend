@@ -17,8 +17,9 @@ export class TodoService {
     return todo;
   }
 
-  async readBatch(): Promise<TodoDocument[]> {
-    return await this.todoModel.find().exec();
+  async readBatch(latest: boolean = false): Promise<TodoDocument[]> {
+    const todos =  await this.todoModel.find().exec();
+    return latest ? todos.reverse() : todos; // reverse if the flag is true
   }
 
   async read(id: string): Promise<TodoDocument> {

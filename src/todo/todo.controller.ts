@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query, ParseBoolPipe } from '@nestjs/common';
 import { TodoService } from './todo.service';
 import { PartialTodoDTO, TodoDTO } from './dto';
 
@@ -12,8 +12,8 @@ export class TodoController {
   }
 
   @Get()
-  getTodos() {
-    return this.todoService.readBatch();
+  getTodos(@Query('latest', new ParseBoolPipe({ optional: true })) latest = false) {
+    return this.todoService.readBatch(latest);
   }
 
   @Get(':id')
