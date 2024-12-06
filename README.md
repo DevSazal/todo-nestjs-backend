@@ -10,6 +10,7 @@
 * Git
 * MongoDB
 
+<br>
 
 Let's clone the repository on your machine.
 
@@ -52,6 +53,7 @@ To install, build, and start the application for the first time, run the followi
 npm install
 ```
 
+<br>
 
 Let's rename from `.env.example` to `.env` and make sure all the necessary information is correct:
 
@@ -62,6 +64,7 @@ MONGODB_URI=<MongoDB_ATLAS_URI_HERE_PLEASE>
 FRONTEND_URL=<FRONTEND_WEB_APP_URL_HERE_PLEASE>
 ```
 
+<br>
 
 Already done? Cool! You are almost ready to enjoy the app. ⛳️
 
@@ -83,17 +86,13 @@ npm run test:e2e
 ```
 <br>
 
+### 🥇 Congrats!! You are good to go
 
-#### 🥇 Congrats!! You are good to go
-
-#### 🧑‍💻 Stay in touch
+### 🧑‍💻 Stay in touch
 
 - Author - [Sazal Ahamed](https://sazal.vercel.app)
 - Linkedin - [Profie](https://www.linkedin.com/in/sazal-ahamed/)
 - GitHub - [DevSazal](https://github.com/DevSazal)
 
-#### License
 
-[MIT licensed](LICENSE) © 2023
-
-#### tada! 🎉🎉
+### 🎉🎉 tada! 🎉🎉
