@@ -1,77 +1,99 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# To-Do NestJS Backend (+E2E)
+#### exploration of rest api with testable code
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+### Requirements:
 
-  <p align="center">
+* Node.js
+* NPM
+* TypeScript, NestJS v10.0.0
+* Git
+* MongoDB
 
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
 
-  </p>
+Let's clone the repository on your machine.
 
-## Description
+The application includes the following files and folders.
 
-[Nest v10.0.0](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+- `src` - code for the application written in TypeScript, NestJS, Express.js.
+- `test` - to test all the features.
+- `.env.example` - a sample of .env which can be helpful for configuration.
 
 ```bash
-$ npm install
+# architecture
+# deep drive in src directory
+
+src/
+├── todo/
+│   ├── dto/
+│   │   ├── todo.dto.ts
+│   │   └── index.ts
+│   │
+│   ├── schemas/
+│   │   └── todo.schema.ts
+│   │
+│   ├── todo.controller.ts
+│   ├── todo.module.ts
+│   └── todo.service.ts
+│
+├── app.module.ts
+└── main.ts
+
 ```
 
-## Running the app
+
+## Installation and Configuration
+
+Let's move to the cloned directory with your terminal.
+
+To install, build, and start the application for the first time, run the following commands:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm install
 ```
 
-## Test
+
+Let's rename from `.env.example` to `.env` and make sure all the necessary information is correct:
 
 ```bash
-# unit tests
-$ npm run test
+PORT=3000
 
+MONGODB_URI=<MongoDB_ATLAS_URI_HERE_PLEASE>
+FRONTEND_URL=<FRONTEND_WEB_APP_URL_HERE_PLEASE>
+```
+
+
+Already done? Cool! You are almost ready to enjoy the app. ⛳️
+
+### Build & Run:
+
+```bash
+npm run start
+
+```
+
+
+### Test:
+Oh! You wanna trigger testing for the application from terminal
+
+```bash
 # e2e tests
-$ npm run test:e2e
+npm run test:e2e
 
-# test coverage
-$ npm run test:cov
 ```
+<br>
 
-## Dev Note {NestJS CLI}
 
-```bash
-# generate module by terminal
-$ nest g mo <name>
+#### 🥇 Congrats!! You are good to go
 
-# generate controller by terminal
-$ nest g co <name>
-
-# generate service by terminal
-$ nest g s <name>
-```
-
-## Stay in touch
+#### 🧑‍💻 Stay in touch
 
 - Author - [Sazal Ahamed](https://sazal.vercel.app)
 - Linkedin - [Profie](https://www.linkedin.com/in/sazal-ahamed/)
 - GitHub - [DevSazal](https://github.com/DevSazal)
 
-## License
+#### License
 
 [MIT licensed](LICENSE) © 2023
+
+#### tada! 🎉🎉
