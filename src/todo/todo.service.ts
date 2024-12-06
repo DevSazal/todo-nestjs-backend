@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestj
 import { TodoDTO, PartialTodoDTO } from './dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Todo, TodoDocument } from './schemas/todo.schema';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 
 @Injectable()
 export class TodoService {
@@ -23,6 +23,8 @@ export class TodoService {
   }
 
   async read(id: string): Promise<TodoDocument> {
+    if (!Types.ObjectId.isValid(id)) throw new NotFoundException(`todo not found!`);
+
     const todo = await this.todoModel.findById(id);
     if (!todo) throw new NotFoundException(`todo not found!`);
     return todo;
@@ -39,6 +41,7 @@ export class TodoService {
   }
 
   async delete(id: string): Promise<HttpException> {
+    if (!Types.ObjectId.isValid(id)) throw new NotFoundException(`failed to delete todo!`);
     const subscriber = await this.todoModel.findByIdAndDelete(id);
     if (!subscriber) throw new NotFoundException(`failed to delete todo!`);
     throw new HttpException('The data has been deleted successfully', HttpStatus.OK);
